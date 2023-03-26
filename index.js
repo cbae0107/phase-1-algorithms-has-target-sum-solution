@@ -1,10 +1,20 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+// function hasTargetSum(array, target) {
+//   for (let i = 0; i < array.length; i++){
+//     const num2 = target - array[i];
+//     for (let j = i + 1; j < array.length; j++){
+//       if (array[j] === num2) return true
+//     }
+//   } return false
+// }
 
-/* 
-  Write the Big O time complexity of your function here
-*/
+function hasTargetSum(array, target){
+  const num1 = {};
+  for (const number of array){
+    const num2 = target - number;
+    if (num1[num2]) return true;
+    num1[number] = true
+  } return false
+} 
 
 /* 
   Add your pseudocode here
